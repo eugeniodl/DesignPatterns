@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class ProductoRespositoryArchivo : IProductoRepository
+    public class ProductoRepositoryArchivo : IProductoRepository
     {
         private string _nombreArchivo;
 
-        public ProductoRespositoryArchivo(string nombreArchivo)
+        public ProductoRepositoryArchivo(string nombreArchivo)
         {
             _nombreArchivo = nombreArchivo;
         }
