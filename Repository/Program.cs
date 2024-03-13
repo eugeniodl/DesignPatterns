@@ -7,7 +7,7 @@ string archivoProductos = "productos.txt";
 // Crear una instancia del repositorio de productos
 // utilizando el archivo
 IProductoRepository productoRepository
-    = new ProductoRespositoryArchivo(archivoProductos);
+    = new ProductoRepositoryArchivo(archivoProductos);
 
 // Crear una instancia del gestor de productos 
 // utilizando el repositorio
