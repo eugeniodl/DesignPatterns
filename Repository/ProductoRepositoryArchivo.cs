@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class ProductoRespositoryArchivo : IProductoRepository
+    public class ProductoRepositoryArchivo : IProductoRepository
     {
         private string _nombreArchivo;
 
-        public ProductoRespositoryArchivo(string nombreArchivo)
+        public ProductoRepositoryArchivo(string nombreArchivo)
         {
             _nombreArchivo = nombreArchivo;
         }
@@ -18,8 +18,7 @@ namespace Repository
         {
             try
             {
-                using (StreamWriter sw
-            = new StreamWriter(_nombreArchivo))
+                using (StreamWriter sw = new StreamWriter(_nombreArchivo))
                 {
                     foreach (Producto producto in productos)
                     {
@@ -29,19 +28,16 @@ namespace Repository
             }
             catch (IOException e)
             {
-                Console.WriteLine($"Error al escribir en el archivo" +
-                    $"{e.Message}");
+                Console.WriteLine($"Error al escribir en el archivo: {e.Message}");
             }
         }
 
         public List<Producto> ObtenerTodos()
         {
             List<Producto> productos = new List<Producto>();
-
             try
             {
-                using (StreamReader sr =
-            new StreamReader(_nombreArchivo))
+                using (StreamReader sr = new StreamReader(_nombreArchivo))
                 {
                     string linea;
                     while ((linea = sr.ReadLine()) != null)
@@ -58,10 +54,8 @@ namespace Repository
             }
             catch (IOException e)
             {
-                Console.WriteLine("Error al leer el archivo" +
-                    e.Message);
+                Console.WriteLine($"Error al leer el archivo: {e.Message}");
             }
-
             return productos;
         }
     }

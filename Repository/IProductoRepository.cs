@@ -9,6 +9,7 @@ namespace Repository
     // Repositorio de Productos
     public interface IProductoRepository
     {
+
         List<Producto> ObtenerTodos();
         void GuardarTodos(List<Producto> productos);
     }
